@@ -17,7 +17,7 @@ const [counter, setCounter] = useState(0);
 
 let getLocation=()=>{
   const successCallback = (position) => {
-    console.log('postion',position);
+    
 
   };
   
@@ -42,7 +42,11 @@ let getcurrentLoction= ()=>{
         longitude: position.coords.longitude,
         timestamp: dateFormat(now),  
         speed : position.coords.speed,
-        cords : position.coords 
+        accuracy: position.coords.accuracy, 
+        altitued : position.coords.altitude, 
+        heading : position.coords.heading,
+        timestapByApi: position.timestamp
+
 
       });
 
