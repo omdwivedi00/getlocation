@@ -98,6 +98,9 @@ const handleDownloadJson = () => {
         {lodata.map((data, index) => (
           <p key={index}>
             Latitude: {data.latitude}, Longitude: {data.longitude}, speed: {data.speed }
+           <a href={`https://www.google.com/maps/search/?api=1&query=${data.latitude},${data.longitude}`}  target='_blank'> <Button variant="outlined" size="small">
+          View on map
+        </Button></a>
           </p>
         ))}
       </div>
