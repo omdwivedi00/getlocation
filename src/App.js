@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import {useEffect , useState} from 'react'
 import './App.css';
-
+import Button from '@mui/material/Button';
 import { saveAs } from 'file-saver'; 
 import dateFormat, { masks } from "dateformat";
+
+import Navbar from './component/Navbar';
 
 
 function App() {
@@ -78,8 +80,11 @@ const handleDownloadJson = () => {
   
   return (
     <div>
-    <h2>My Current Location</h2>
-    <button onClick={handleDownloadJson}>Download JSON</button>
+    <Navbar/> 
+    <Button variant="contained" onClick={handleDownloadJson} 
+     sx={{margin:'10px' , backgroundcolor:'success.main'}}
+    
+    >Download JSON</Button>
     {position.latitude && position.longitude ? (
       <div>
         <p>
